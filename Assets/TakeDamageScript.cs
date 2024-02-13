@@ -1,28 +1,50 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class TakeDamageScript : MonoBehaviour
 {
     public float intensity = 0.0f;
 
-    PostProcessVolume _volume;
+    Volume _volume;
     Vignette _vignette;
     // Start is called before the first frame update
     void Start()
     {
-        _volume = GetComponent<PostProcessVolume>();
-        _volume.profile.TryGetSettings<Vignette>(out _vignette);
+        print("Testing TakeDamage");
+        _volume = GetComponent<Volume>();
+        if (!_volume)
+        {
+            Debug.Log("Volume Empty");
+        }
+        else
+        {
+            Debug.Log("Volume found");
+            
+        }
 
-        if(!_vignette)
+        _volume.profile.TryGet<Vignette>(out _vignette);
+
+        if (!_vignette)
         {
             Debug.Log("Vignette Empty");
         }
         else
         {
-            _vignette.enabled.Override(false);
+            print(_vignette);
+            
         }
+
+        TakeDamage += TakeDamageCoroutine;
+    }
+
+    private void TakeDamageCoroutine()
+    {
+        StartCoroutine(TakeDamageEffect());
     }
 
     // Update is called once per frame
@@ -34,11 +56,15 @@ public class TakeDamageScript : MonoBehaviour
         }
     }
 
+    public static Action TakeDamage;
+
+
+
     private IEnumerator TakeDamageEffect()
     {
         intensity = 0.4f;
 
-        _vignette.enabled.Override(true);
+        
         _vignette.intensity.Override(intensity);
         yield return new WaitForSeconds(0.4f);
 
@@ -55,7 +81,6 @@ public class TakeDamageScript : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        _vignette.enabled.Override(false);
         yield break;
     }
 }

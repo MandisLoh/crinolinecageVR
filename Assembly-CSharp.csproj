@@ -130,6 +130,7 @@
     <Compile Include="Assets\CatchOnFire.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Movement\Climbable.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Grabbable\DispenserPoint.cs" />
+    <Compile Include="Assets\TriggerFlyAway.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Tools\Stabbable.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Attributes\AutoHeaderAttribute.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Helpers\BoxColliderSerializationFixer.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Assets\AutoHand\Scripts\Grabbable\GrabbableOnlyJoint.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Templates\HandTouchEventDebugger.cs" />
     <Compile Include="Assets\AutoHand\Examples\Scenes\XR\Scripts\XRControllerEvent.cs" />
+    <Compile Include="Assets\TriggerShakeHands.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Tools\HandCanvasPointer.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Demo\Gadget Demo\MoverLever.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />

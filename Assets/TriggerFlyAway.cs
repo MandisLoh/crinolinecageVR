@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatchOnFire : MonoBehaviour
+public class TriggerFlyAway : MonoBehaviour
 {
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Cage")
+        if (other.gameObject.tag == "Cage")
         {
             Debug.Log("Fire is Catching, If we burn, you burn with us");
-            TakeDamageScript.TakeDamage.Invoke();
+            EventManager.triggerFlyAway.Invoke();
         }
     }
 }

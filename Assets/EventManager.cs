@@ -11,10 +11,17 @@ public class EventManager : MonoBehaviour
     void Awake()
     {
         triggerShakeHands += shakeHands;
-        EventManager.triggerShakeHands.Invoke();
+        triggerFlyAway += flyAway;
+        EventManager.triggerFlyAway.Invoke();
+    }
+
+    private void flyAway()
+    {
+        avatarAnim.Play("Fly Away");
     }
 
     public static Action triggerShakeHands;
+    public static Action triggerFlyAway;
     public void shakeHands()
     {
         avatarAnim.Play("Shake Hands");

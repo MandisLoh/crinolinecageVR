@@ -74,6 +74,7 @@
     <Compile Include="Assets\AutoHand\Scripts\Hand\Finger.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Demo\Demo Scene\JointBreakStopForce1.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Grabbable\GrabbableCollisionHaptics.cs" />
+    <Compile Include="Assets\TakeDamageScript.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Demo\Text Demo\TextPlacePointEvent.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Attributes\AutoToggleHeaderAttribute.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />

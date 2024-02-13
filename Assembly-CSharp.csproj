@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{40FE49AD-5321-9EED-0F41-80165A855C02}</ProjectGuid>
+    <ProjectGuid>{16FD3FA6-12DF-B552-832E-FA72443BA05F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -146,6 +146,8 @@
     <Compile Include="Assets\AutoHand\Scripts\Internal\KeyboardHand.cs" />
     <Compile Include="Assets\AutoHand\Examples\Scenes\XR\Scripts\XRHeadTracking.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\EventManager.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Demo\Demo Scene\HandSwapper.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Hand\HandProjector.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Internal\HandVelocityTracker.cs" />
@@ -191,6 +193,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Movement\AutoHandPlayerForceArea.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Tools\CollisionIgnores.cs" />
+    <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Demo\Demo Scene\Door.cs" />
     <Compile Include="Assets\AutoHand\Examples\Scenes\OpenXR\Scripts\InputActionEnabler.cs" />
@@ -232,9 +235,11 @@
     <Compile Include="Assets\AutoHand\Scripts\Grabbable\GrabbablePoseAdvanced.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Tools\Stickable.cs" />
+    <Compile Include="Assets\AutoHand\Scripts\DebugTools\AutoHandPlayerControllerInputSimulator.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Gadgets\HandTouchButton.cs" />
     <Compile Include="Assets\AutoHand\Scripts\Tools\PhysicsFollower.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\AutoHand\Scripts\DebugTools\SimulatedPoseDriver.cs" />
     <Compile Include="Assets\AutoHand\Examples\Scenes\XR\Scripts\XRHandPointGrabLink.cs" />
     <Compile Include="Assets\AutoHand\Examples\Scenes\OpenXR\Scripts\OpenXRHandPointGrabLink.cs" />
     <Compile Include="Assets\AutoHand\Examples\Scenes\XR\Scripts\XRHandPlayerControllerLink.cs" />
@@ -288,6 +293,7 @@
     <None Include="Assets\Vefects\Free Fire VFX URP\Shaders\SH_Vefects_VFX_URP_Fire_Flames_01.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Old Cabinet\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
@@ -937,6 +943,9 @@
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.MockHMD">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.MockHMD.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
@@ -1002,6 +1011,9 @@
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.MockHMD.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.MockHMD.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
@@ -1108,15 +1120,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
-      <Project>{5EDFFD17-3784-05D0-120A-20E2C3E7F839}</Project>
+      <Project>{0D9D4943-E825-C163-077B-F68E80CEFE99}</Project>
       <Name>NaughtyAttributes.Core</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Editor.csproj">
-      <Project>{AA6617BD-2BE6-4A6F-653C-C56C9CF3555A}</Project>
+      <Project>{99ADBC5E-06DD-870F-304A-E9A0BC3526AC}</Project>
       <Name>NaughtyAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj">
-      <Project>{58598E95-80D4-4967-B772-E37471B0CB33}</Project>
+      <Project>{B5B2345B-0AC2-14D6-6B2A-EAA6FE2723F3}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator</Name>
     </ProjectReference>
   </ItemGroup>

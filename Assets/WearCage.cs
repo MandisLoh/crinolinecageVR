@@ -23,7 +23,7 @@ public class WearCage : MonoBehaviour
 
                 rb = rb.GetComponent<Rigidbody>();
                 Debug.Log(rb.name);
-                rb.drag = 50;
+                rb.drag = 42;
                 EventManager.triggerOpenDoor.Invoke();
             }
                 

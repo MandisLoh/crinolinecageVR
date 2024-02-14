@@ -87,7 +87,7 @@ public class TakeDamageScript : MonoBehaviour
             }
 
             _vignette.intensity.Override(intensity);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.34f);
         }
 
         

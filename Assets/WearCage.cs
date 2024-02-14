@@ -17,12 +17,17 @@ public class WearCage : MonoBehaviour
         {
             Debug.Log("Hand detected");
             if (displayCage.activeInHierarchy == true)
+            {
                 displayCage.SetActive(false);
                 wearCage.SetActive(true);
-            
+
                 rb = rb.GetComponent<Rigidbody>();
                 Debug.Log(rb.name);
                 rb.drag = 50;
+                EventManager.triggerOpenDoor.Invoke();
+            }
+                
+            
 
         }
 

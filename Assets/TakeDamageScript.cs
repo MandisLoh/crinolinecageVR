@@ -5,19 +5,25 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class TakeDamageScript : MonoBehaviour
 {
     public float intensity = 0.0f;
+    public GameObject blackScreen;
 
-    Volume _volume;
+    Volume[] volumeList;
     Vignette _vignette;
+
+    Volume _volume1;
+
     // Start is called before the first frame update
     void Start()
     {
         print("Testing TakeDamage");
-        _volume = GetComponent<Volume>();
-        if (!_volume)
+        _volume1 = GetComponent<Volume>();
+         
+        if (!_volume1)
         {
             Debug.Log("Volume Empty");
         }
@@ -27,7 +33,7 @@ public class TakeDamageScript : MonoBehaviour
             
         }
 
-        _volume.profile.TryGet<Vignette>(out _vignette);
+        _volume1.profile.TryGet<Vignette>(out _vignette);
 
         if (!_vignette)
         {
@@ -72,15 +78,19 @@ public class TakeDamageScript : MonoBehaviour
         {
             intensity += 0.02f;
 
-            if(intensity > 1f) 
+            if(intensity >= 1f) 
             {
                 intensity = 1f;
+                EventManager.triggerGameOver.Invoke();
+                //SceneManager.LoadScene("GameOverScene");
+                blackScreen.SetActive(true);
             }
 
             _vignette.intensity.Override(intensity);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.5f);
         }
 
+        
         yield break;
     }
 }

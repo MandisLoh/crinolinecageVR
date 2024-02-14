@@ -16,7 +16,7 @@ public class AnimationController : MonoBehaviour
 
     private void flyAway()
     {
-        avatarAnim.Play("Fly Away");
+        avatarAnim.Play("Fly Away2");
     }
 
     public static Action triggerShakeHands;
